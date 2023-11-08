@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ brewery[0].name }} Brewery Info</title>
+    <style>
+        /* Style for the container */
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #d5c2c2;
+            margin-top: 50px; /* Added margin-top for spacing */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> Brewery Info</h1>
+        <p>Name: {{brewery[0].name}}</p>
+        <p>Address: {{ brewery[0].address_1 }}</p>
+        <p>Phone: {{ brewery[0].phone }}</p>
+        <p>State: {{ brewery[0].state }}</p>
+        <p>City: {{ brewery[0].city }}</p>
+        
+        <h4>Reviews</h4>
+        {% if reviews %}
+        <ul>
+            {% for review in reviews %}
+                <li>Rating: {{ review.rating }}</li>
+                <li>Description: {{ review.description }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No reviews found.</p>
+    {% endif %}
+    </div>
+</body>
+</html>
+
