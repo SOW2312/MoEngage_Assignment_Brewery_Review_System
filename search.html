@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <style>
+        /* Style for the search container */
+        .search-container {
+            width: 50%;
+            margin: 0 auto;
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            background-color:#e5cfcf;
+            margin-top: 50px; /* Added margin-top for spacing */
+        }
+
+        /* Style for search form labels and inputs */
+        label, input, select {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Style for submit button */
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Style for search results container */
+        .results-container {
+            width: 70%;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        /* Style for search results */
+        .search-results {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        /* Style for each brewery item */
+        .brewery-item {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <h1>Search Breweries</h1>
+        <form action="/search" method="post">
+            <label for="search_term">Search Term:</label>
+            <input type="text" id="search_term" name="search_term" required><br><br>
+            <label for="search_type">Search Type:</label>
+            <select id="search_type" name="search_type" required>
+                <option value="by_city">By City</option>
+                <option value="by_name">By Name</option>
+                <option value="by_type">By Type</option>
+            </select><br><br>
+            <input type="submit" value="Search">
+        </form>
+    </div>
+
+    <div class="results-container">
+        {% if breweries %}
+            <h2>Search Results:</h2>
+            <ul class="search-results">
+                {% for brewery in breweries %}
+                    <li class="brewery-item">
+                        Name: <a href="{{ url_for('brewery', name=brewery.name) }}">{{ brewery.name }}</a><br>
+                        Id: {{brewery.id}}<br>
+                        City: {{ brewery.city }}<br>
+                        State: {{ brewery.state }}<br>
+                        Address: {{ brewery.address }}<br>
+                        Phone: {{ brewery.phone }}<br>
+                        Website: <a href="{{ brewery.website }}" target="_blank">{{ brewery.website }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+
+        {% else %}
+            <p>No breweries found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
