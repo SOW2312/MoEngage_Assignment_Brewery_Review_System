@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍻Breweries Review System</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: rgb(237, 159, 159); /* Light grey background color */
+            font-family: Arial, sans-serif;
+        }
+
+        .content {
+            margin-top: 50px;
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #0e0d0d;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .buttons-container form {
+            margin: 0 10px;
+            font-size: 1.5em;
+            padding: 10px 30px;
+            background-color: #008cff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .buttons-container form:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="submit"] {
+            cursor: pointer;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .button-group form {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Breweries Review System🍻</h1>
+    
+    
+    <div class="buttons-container">
+        <div class="button-group">
+            <form action="/login" method="get">
+                <input type="submit" value="Login">
+            </form>
+            <form action="/signup" method="get">
+                <input type="submit" value="Sign Up">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
