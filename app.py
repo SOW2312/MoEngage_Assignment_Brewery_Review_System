@@ -16,9 +16,9 @@ def send_password_to_email(to_address, password):
     # Set up the SMTP server
     smtp_server = "your_smtp_server.com"
     smtp_port = 587
-    username = "aupadhya2001@gmail.com"
+    username = "abcdsfhan@gmail.com"
     password = "zpaf xboz emoh upf"
-    from_address = "aupadhya2001@gmail.com"
+    from_address = "abcdsfhan@gmail.com"
 
     # Create the email message
     subject = "Your Password Recovery"
